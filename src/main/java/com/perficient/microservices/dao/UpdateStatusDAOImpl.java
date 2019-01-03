@@ -9,13 +9,13 @@ import org.springframework.data.mongodb.core.query.Update;
 import com.mongodb.client.result.UpdateResult;
 import com.perficient.microservices.model.Client;
 
-public class UpdateStatusDAOImpl implements UpdateStatusDAO {
+public class UpdateStatusDAOImpl implements UpdateClientStatusDAO {
 
 	@Autowired
 	private MongoOperations mongoOperation;
 
 	@Override
-	public String updateStatus(Client client) {
+	public long updateClientStatus(Client client) {
 
 		Query query = new Query();
 		query.addCriteria(Criteria.where("name").is(client.getName()));
@@ -23,10 +23,10 @@ public class UpdateStatusDAOImpl implements UpdateStatusDAO {
 		Update update = new Update();
 		update.set("status", client.getStatus());
 
-		UpdateResult retrievedClient = mongoOperation.upsert(query, update, Client.class);
+		UpdateResult updatedClientRecord = mongoOperation.upsert(query, update, Client.class);
 
-		System.out.println("retrievedClient " + retrievedClient.toString());
-		return retrievedClient.toString();
+		System.out.println("Updated client record: " + updatedClientRecord.toString());
+		return updatedClientRecord.getModifiedCount();
 
 	}
 

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.perficient.microservices.dao.UpdateStatusDAO;
+import com.perficient.microservices.dao.UpdateClientStatusDAO;
 import com.perficient.microservices.dao.UpdateStatusDAOImpl;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -16,12 +16,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication(exclude = KafkaAutoConfiguration.class)
 @ComponentScan({ "com.perficient.microservices" })
 @EnableSwagger2
-@EnableMongoRepositories(basePackageClasses = UpdateStatusDAO.class)
+@EnableMongoRepositories(basePackageClasses = UpdateClientStatusDAO.class)
 @EnableDiscoveryClient
 public class ConsumerApplication {
 
 	@Bean
-	public UpdateStatusDAO updateStatusDAO() {
+	public UpdateClientStatusDAO updateClientStatusDAO() {
 		return new UpdateStatusDAOImpl();
 	}
 
