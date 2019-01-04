@@ -5,15 +5,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.perficient.microservices.dao.UpdateClientStatusDAO;
 import com.perficient.microservices.model.Client;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@WebAppConfiguration
+@RunWith(SpringRunner.class)
+@SpringBootTest
+//@WebAppConfiguration
 @ContextConfiguration("/applicationContext.xml")
 public class UpdateStatusServiceImplTest {
 
@@ -31,8 +32,8 @@ public class UpdateStatusServiceImplTest {
 	@Test
 	public void testConsumeJson() {
 		Client client = new Client();
-		client.setName("SM");
-		client.setStatus("L");
+		client.setName("Perficient");
+		client.setStatus("A");
 		updateStatusServiceImpl.consumeJson(client);
 	}
 

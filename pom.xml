@@ -28,44 +28,28 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 		</dependency>
-			<!--  <dependency>
-		<groupId>org.springframework.cloud</groupId>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency> -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
-		</dependency> 
-		<!-- https://mvnrepository.com/artifact/junit/junit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-junit4</artifactId>
-			<version>0.6.2.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.intuit.karate</groupId>
-			<artifactId>karate-apache</artifactId>
-			<version>0.6.2.2</version>
-			<scope>test</scope>
-		</dependency>
+
+		<!-- <dependency> <groupId>de.flapdoodle.embed</groupId> <artifactId>de.flapdoodle.embed.mongo</artifactId> 
+			<version>1.26</version> <scope>test</scope> </dependency> -->
+		<!-- <dependency> <groupId>com.intuit.karate</groupId> <artifactId>karate-junit4</artifactId> 
+			<version>0.6.2.2</version> <scope>test</scope> </dependency> <dependency> 
+			<groupId>com.intuit.karate</groupId> <artifactId>karate-apache</artifactId> 
+			<version>0.6.2.2</version> <scope>test</scope> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
@@ -96,17 +80,9 @@
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka-test</artifactId>
-			<version>1.0.0.RELEASE</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test -->
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka-test</artifactId>
 			<version>1.2.0.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
